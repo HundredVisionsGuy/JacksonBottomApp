@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="DarkGreenHTML">#007336</color>
+    <color name="HillsboroBlueHTML">#003082</color>
+    <color name="GoldHTML">#F7D117</color>
+    <color name="PaleBlueHTML">#78B3E0</color>
+    <color name="GreyHTML">#819196</color>
+    <color name="HillsboroGreenHTML">#4FA800</color>
+    <color name="OrangeHTML">#F56600</color>
+    <color name="PaleGreenHTML">#A3D963</color>
+    <color name="BlackHTML">#000000</color>
+    <color name="RustHTML">#D57E6C</color>
 </resources>
