@@ -30,7 +30,7 @@
                     android:layout_weight=".5" />
 
                 <TextView
-                    android:text="Sample Text Here"
+                    android:text="@string/sample_text"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:id="@+id/text_displayentry"
