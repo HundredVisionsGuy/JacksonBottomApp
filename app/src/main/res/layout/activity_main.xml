@@ -37,8 +37,8 @@
                     android:layout_weight=".5"
                     android:gravity="center"
                     android:textAlignment="center"
-                    android:textAllCaps="false" />
-
+                    android:textAllCaps="false"
+                    android:textColor= "#003082"/>
             </LinearLayout>
 
         <LinearLayout
