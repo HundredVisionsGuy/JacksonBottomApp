@@ -9,7 +9,9 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,7 +40,7 @@
                     android:gravity="center"
                     android:textAlignment="center"
                     android:textAllCaps="false"
-                    android:textColor= "#003082"
+                    android:textColor="@color/HillsboroBlueHTML"
                     android:textSize="30sp"/>
             </LinearLayout>
 
