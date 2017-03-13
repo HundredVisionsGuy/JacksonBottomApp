@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Jackson Bottom</string>
-    <string name="sample_text">Sample Text goes here.</string>
+    <string name="sample_text">Welcome To The Jackson Bottom Wetland Reserve.</string>
+    <string name="gps_network_not_enabled">Your GPS is not Enabled. Would you like to turn it on now?</string>
+    <string name="open_location_settings">Open Location Settings</string>
+    <string name="Cancel">Cancel</string>
+    <string name="welcome_to_the_jackson_bottom_wetland_reserve">Welcome To The Jackson Bottom Wetland Reserve</string>
 </resources>

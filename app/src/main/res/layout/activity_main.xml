@@ -32,7 +32,7 @@
                     android:layout_weight=".5" />
                     -->
                 <TextView
-                    android:text="Welcome To The Jackson Bottom Wetland Reserve"
+                    android:text="@string/welcome_to_the_jackson_bottom_wetland_reserve"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:id="@+id/text_displayentry"
