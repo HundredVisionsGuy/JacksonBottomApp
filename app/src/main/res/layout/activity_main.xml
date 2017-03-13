@@ -30,7 +30,7 @@
                     android:layout_weight=".5" />
 
                 <TextView
-                    android:text="@string/sample_text"
+                    android:text="Welcome To The Jackson Bottom Wetland Reserve"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:id="@+id/text_displayentry"
