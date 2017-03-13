@@ -21,14 +21,14 @@
                     of text_string_name (always begin with "text" always separate with underscores
                     _
                 -->
-                <Button
+               <!-- <Button
                     android:text="Button"
                     android:layout_width="wrap_content"
                     android:id="@+id/button_advancecount"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@android:color/holo_green_dark"
                     android:layout_weight=".5" />
-
+                    -->
                 <TextView
                     android:text="Welcome To The Jackson Bottom Wetland Reserve"
                     android:layout_width="wrap_content"
@@ -38,7 +38,8 @@
                     android:gravity="center"
                     android:textAlignment="center"
                     android:textAllCaps="false"
-                    android:textColor= "#003082"/>
+                    android:textColor= "#003082"
+                    android:textSize="30sp"/>
             </LinearLayout>
 
         <LinearLayout
