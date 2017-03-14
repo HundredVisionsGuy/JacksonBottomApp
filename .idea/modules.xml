@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/_JascksonBottomApp.iml" filepath="$PROJECT_DIR$/_JascksonBottomApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_JacksonBottomApp.iml" filepath="$PROJECT_DIR$/_JacksonBottomApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
