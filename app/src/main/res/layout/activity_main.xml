@@ -9,7 +9,9 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -21,24 +23,25 @@
                     of text_string_name (always begin with "text" always separate with underscores
                     _
                 -->
-                <Button
+               <!-- <Button
                     android:text="Button"
                     android:layout_width="wrap_content"
                     android:id="@+id/button_advancecount"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/HillsboroGreenHTML"
                     android:layout_weight=".5" />
-
+                    -->
                 <TextView
-                    android:text="@string/sample_text"
+                    android:text="@string/welcome_to_the_jackson_bottom_wetland_reserve"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:id="@+id/text_displayentry"
                     android:layout_weight=".5"
                     android:gravity="center"
                     android:textAlignment="center"
-                    android:textAllCaps="false" />
-
+                    android:textAllCaps="false"
+                    android:textColor="@color/HillsboroBlueHTML"
+                    android:textSize="30sp"/>
             </LinearLayout>
 
         <LinearLayout
