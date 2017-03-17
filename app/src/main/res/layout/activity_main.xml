@@ -11,29 +11,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        tools:ignore="UselessParent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/top_layout">
+                android:id="@+id/top_layout"
+                tools:ignore="ExtraText">
                 <!--
                     Rowan: as you begin doing layouts for the app, could you begin using
                     strings ( e.g. "@string/string_name"), use the naming convention
                     of text_string_name (always begin with "text" always separate with underscores
                     _
                 -->
-               <!-- <Button
-                    android:text="Button"
-                    android:layout_width="wrap_content"
-                    android:id="@+id/button_advancecount"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@android:color/holo_green_dark"
-                    android:layout_weight=".5" />
+
                     -->
                 <TextView
                     android:text="@string/welcome_to_the_jackson_bottom_wetland_reserve"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/text_displayentry"
                     android:layout_weight=".5"
@@ -58,5 +54,12 @@
                 android:visibility="visible"
                 android:progress="@android:integer/config_longAnimTime" />
         </LinearLayout>
+
+        <Button
+                android:text="@string/Is_Your_location_on"
+                android:layout_width="match_parent"
+                android:id="@+id/button_advancecount"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/PaleBlueHTML"/>
     </LinearLayout>
 </RelativeLayout>
