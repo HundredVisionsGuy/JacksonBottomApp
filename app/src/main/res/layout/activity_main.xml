@@ -10,9 +10,9 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:ignore="UselessParent"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        tools:ignore="UselessParent">
+        android:layout_alignParentStart="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -61,5 +61,6 @@
                 android:id="@+id/button_advancecount"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/PaleBlueHTML"/>
+        <!-- Need to add button to location settings-->
     </LinearLayout>
 </RelativeLayout>
