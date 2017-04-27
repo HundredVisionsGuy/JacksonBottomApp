@@ -10,11 +10,12 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="UselessParent"
-        android:layout_alignParentTop="true"
+        tools:ignore="NotSibling,UselessParent"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/button_advancecount"
         android:layout_alignParentStart="true">
 
-            <LinearLayout
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/top_layout"
@@ -27,23 +28,25 @@
                 -->
 
                     -->
-                <TextView
-                    android:text="@string/welcome_to_the_jackson_bottom_wetland_reserve"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/text_displayentry"
-                    android:layout_weight=".5"
-                    android:gravity="center"
-                    android:textAlignment="center"
-                    android:textAllCaps="false"
-                    android:textColor="@color/HillsboroBlueHTML"
-                    android:textSize="30sp"/>
-            </LinearLayout>
+
+            <TextView
+                android:text="@string/welcome_to_the_jackson_bottom_wetland_reserve"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/text_displayentry"
+                android:layout_weight=".5"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/HillsboroBlueHTML"
+                android:textSize="30sp"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             >
+
             <ProgressBar
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="0dp"
@@ -55,12 +58,24 @@
                 android:progress="@android:integer/config_longAnimTime" />
         </LinearLayout>
 
+        <TextView
+            android:text="@string/Rules"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2" />
+
         <Button
                 android:text="@string/Is_Your_location_on"
                 android:layout_width="match_parent"
                 android:id="@+id/button_advancecount"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/PaleBlueHTML"/>
+                android:backgroundTint="@color/PaleBlueHTML"
+                android:textColor="@color/BlackHTML"
+            android:layout_marginEnd="61dp"
+             />
+
+
         <!-- Need to add button to location settings-->
     </LinearLayout>
+
 </RelativeLayout>
