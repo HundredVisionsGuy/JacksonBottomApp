@@ -5,7 +5,9 @@
     <string name="Cancel">Cancel</string>
     <string name="welcome_to_the_jackson_bottom_wetland_reserve">Welcome To The Jackson Bottom Wetland Reserve</string>
     <string name="Is_Your_location_on">Is your location on?</string>
-    <string name="Rules">Trails are open dawn to dusk, seven days a week.
-No dogs or bicycles, please.
-The Education Center is open 10 am to 4 pm, seven days a week</string>
+    <string-array name="Rules">
+        <item>Trails are open dawn to dusk, seven days a week.</item>
+        <item>No dogs or bicycles, please.</item>
+        <item>The Education Center is open 10 am to 4 pm, seven days a week</item>
+    </string-array>
 </resources>
