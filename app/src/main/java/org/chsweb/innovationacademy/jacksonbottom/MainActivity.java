@@ -45,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             network_enabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-        } catch(Exception ex) {}
+        } catch(Exception ex) {
+            Log.v(TAG, "network enabled failed!");
+        }
 
         if(!gps_enabled && !network_enabled) {
             // notify user

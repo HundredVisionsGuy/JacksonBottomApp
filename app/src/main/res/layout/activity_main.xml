@@ -20,14 +20,7 @@
             android:orientation="vertical"
                 android:id="@+id/top_layout"
                 tools:ignore="ExtraText">
-                <!--
-                    Rowan: as you begin doing layouts for the app, could you begin using
-                    strings ( e.g. "@string/string_name"), use the naming convention
-                    of text_string_name (always begin with "text" always separate with underscores
-                    _
-                -->
 
-                    -->
 
             <TextView
                 android:text="@string/welcome_to_the_jackson_bottom_wetland_reserve"
