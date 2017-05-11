@@ -10,4 +10,5 @@
         <item>No dogs or bicycles, please.</item>
         <item>The Education Center is open 10 am to 4 pm, seven days a week</item>
     </string-array>
+    <string name="title_activity_maps">Map</string>
 </resources>

@@ -53,26 +53,17 @@
 
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:id="@+id/rules_list_view"
                 android:layout_weight="1"
                 />
 
-            <Button
-                android:text="@string/Is_Your_location_on"
-                android:layout_width="match_parent"
-                android:id="@+id/button_advancecount"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/PaleBlueHTML"
-                android:textColor="@color/BlackHTML"
-                android:layout_marginEnd="61dp"
-                android:layout_weight="1" />
+
 
 
         </LinearLayout>
 
 
-        <!-- Need to add button to location settings-->
     </LinearLayout>
 
 </LinearLayout>
