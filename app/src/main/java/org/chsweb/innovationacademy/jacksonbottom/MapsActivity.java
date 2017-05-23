@@ -1,7 +1,9 @@
 package org.chsweb.innovationacademy.jacksonbottom;
 
+import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -38,9 +40,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        // Add a marker in Jackson Bottom and move the camera
+        try {
+            LatLng jackson_bottom = new LatLng(45.5007, -122.9903);
+            mMap.addMarker(new MarkerOptions().position(jackson_bottom).title(getString(R.string.marker_jackson_main)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(jackson_bottom));
+        } catch (Exception e) {
+            Context context = getApplicationContext();
+            CharSequence text = e.getMessage();
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
+
     }
 }

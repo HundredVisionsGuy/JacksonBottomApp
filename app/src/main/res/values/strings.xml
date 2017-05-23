@@ -11,4 +11,6 @@
         <item>The Education Center is open 10 am to 4 pm, seven days a week</item>
     </string-array>
     <string name="title_activity_maps">Map</string>
+    <string name="marker_jackson_main">Marker in Jackson Bottom</string>
+    <string name="button_launch_map_text">Open Map</string>
 </resources>

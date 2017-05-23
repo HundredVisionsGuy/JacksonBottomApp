@@ -10,11 +10,15 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.support.v4.app.Fragment;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG ="abc";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,14 @@ public class MainActivity extends AppCompatActivity {
         ListView rulesView = (ListView) findViewById(R.id.rules_list_view);
         Resources res = getResources();
         String[] rules = res.getStringArray(R.array.Rules);
+        final Button button_launch_map = (Button) findViewById(R.id.button_launch_map_activity);
+        button_launch_map.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Launch Map Fragment
+                Intent intent = new Intent(v.getContext(), MapsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, rules);
@@ -72,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
             });
             dialog.show();
         }
+
     }
 
 }
