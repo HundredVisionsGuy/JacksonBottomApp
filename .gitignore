@@ -42,6 +42,7 @@ captures/
 
 # Keystore files
 *.jks
+keystore.properties # Be sure to add this manually
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
