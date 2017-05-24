@@ -39,6 +39,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+        mMap.setMinZoomPreference(16.0f);
+        mMap.setMaxZoomPreference(20.0f);
 
         // Add a marker in Jackson Bottom and move the camera
         try {
