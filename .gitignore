@@ -42,7 +42,10 @@ captures/
 
 # Keystore files
 *.jks
-keystore.properties # Be sure to add this manually
+keystore.properties
+
+# Google Maps API Key
+app/src/debug/res/values/google_maps_api.xml
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
