@@ -46,6 +46,7 @@ keystore.properties
 
 # Google Maps API Key
 app/src/debug/res/values/google_maps_api.xml
+app/src/release/res/values/google_maps_api.xml
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
