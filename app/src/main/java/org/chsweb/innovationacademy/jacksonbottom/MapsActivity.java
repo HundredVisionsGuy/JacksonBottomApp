@@ -46,7 +46,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in Jackson Bottom and move the camera
         try {
             LatLng jackson_bottom = new LatLng(45.5007, -122.9903);
-            mMap.addMarker(new MarkerOptions().position(jackson_bottom).title(getString(R.string.marker_jackson_main)));
+            LatLng upland_ponds = new LatLng(45.5002, -122.9894);
+            mMap.addMarker(new MarkerOptions().position(jackson_bottom).
+                    title(getString(R.string.marker_jackson_main)).
+                    snippet("Hey, I'm a snippet. Yo!"));
+            mMap.addMarker(new MarkerOptions().position(upland_ponds).
+                    title(getString(R.string.marker_upland_ponds)).
+                    snippet(getString(R.string.snippet_upland_ponds)));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(jackson_bottom));
         } catch (Exception e) {
             Context context = getApplicationContext();

@@ -15,15 +15,14 @@
         android:layout_marginTop="29dp">
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-                android:id="@+id/top_layout"
-                tools:ignore="ExtraText">
-
+            android:id="@+id/top_layout"
+            tools:ignore="ExtraText">
 
             <TextView
-                android:text="@string/welcome_to_the_jackson_bottom_wetland_reserve"
+                android:text="@string/textview_welcome_main"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/text_displayentry"
