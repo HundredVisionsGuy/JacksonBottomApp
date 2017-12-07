@@ -39,20 +39,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         mMap.setMinZoomPreference(16.0f);
         mMap.setMaxZoomPreference(20.0f);
 
         // Add a marker in Jackson Bottom and move the camera
         try {
             LatLng jackson_bottom = new LatLng(45.5007, -122.9903);
-            LatLng upland_ponds = new LatLng(45.5002, -122.9894);
+            LatLng upland_ponds = new LatLng(45.50023, -122.9895);
+            LatLng mason_bee_boxes = new LatLng(45.500105, -122.98923);
             mMap.addMarker(new MarkerOptions().position(jackson_bottom).
                     title(getString(R.string.marker_jackson_main)).
                     snippet("Hey, I'm a snippet. Yo!"));
             mMap.addMarker(new MarkerOptions().position(upland_ponds).
                     title(getString(R.string.marker_upland_ponds)).
                     snippet(getString(R.string.snippet_upland_ponds)));
+            mMap.addMarker(new MarkerOptions().position(mason_bee_boxes).
+                    title(getString(R.string.marker_bee_boxes)).
+                    snippet(getString(R.string.snippet_bee_boxes)));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(jackson_bottom));
         } catch (Exception e) {
             Context context = getApplicationContext();
