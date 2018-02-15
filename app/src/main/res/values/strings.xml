@@ -9,7 +9,10 @@
         <item>Trails are open dawn to dusk, seven days a week.</item>
         <item>No dogs or bicycles, please.</item>
         <item>The Education Center is open 10 am to 4 pm, seven days a week</item>
+        <item>Click the "Open Map" Button to View Info about our location</item>
     </string-array>
+    <string name="example">example</string>
+    <string name="snippet_example">example</string>
     <string name="title_activity_maps">Map</string>
     <string name="marker_jackson_main">Marker in Jackson Bottom</string>
     <string name="marker_upland_ponds">Upland Ponds</string>
@@ -17,4 +20,13 @@
     <string name="marker_bee_boxes">Mason Bee Boxes</string>
     <string name="button_launch_map_text">Open Map</string>
     <string name="snippet_bee_boxes">The large house like boxes you see are homes for Mason Bees. These bees don’t make honey and they don’t sting but they do a great job of pollinating all the flowers you see around you. The bees emerge from their cocoons in the spring. They build a nest in narrow holes. Females visit flowers to gather pollen and nectar. The bee lays an egg. Then, she creates a wall of mud, which doubles as the back of the next cell. The process continues until she has filled the cavity. By the summer, the larva has consumed all of its provisions and begins spinning a cocoon around itself.  How many of the tubes in the houses look like they are full?  If you were a bee which flowers in this garden would you like best?</string>
+    <string name="east_side_trail">East Side of Trail</string>
+    <string name="snippet_east_side">At different times of year you will see different types of flowers and berries in this area.  Do you see large bushes covered with white flowers? They are Mock Orange.  Mock means fake.  The flowers look and smell like the flowers of an orange tree.  You may see clusters of small Red Elderberries.  These are a favorite food of some of the birds here.  Clusters of small yellow flowers or green or purple berries on a plant with spiky leaves may be Oregon Grape.  Can you find other berries or flowers that you think might be good animal food?</string>
+    <string name="intersection">Intersection</string>
+    <string name="snippet_intersection">Jackson Bottom Wetlands is called Bottom because it is bottomland, low-lying land by a river that is likely to overflow during floods.  We call it a wetlands because it is land that is often wet.
+
+When the Tualatin River floods it has come as far up as the bottom of this hill.  If you had been standing at the bottom of this hill last winter you would have been underwater.  When spring comes, some of the water flows back into the river and some is absorbed by the plants and soils.  If you had been here in early spring you would have needed you mud boots here.  Later in spring you can still see water in the marshes along the trail but the trail is dry.   How “wet” are the wetlands today?  How much rain has there been lately?</string>
+
+
 </resources>
+
