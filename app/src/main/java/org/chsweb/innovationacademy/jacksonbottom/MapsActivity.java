@@ -10,9 +10,10 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
     private GoogleMap mMap;
 
@@ -42,7 +43,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         mMap.setMinZoomPreference(16.0f);
         mMap.setMaxZoomPreference(20.0f);
-
+        mMap.setOnInfoWindowClickListener(this);
         // Add a marker in Jackson Bottom and move the camera
         try {
             LatLng jackson_bottom = new LatLng(45.5007, -122.9903);
@@ -58,6 +59,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     title(getString(R.string.marker_bee_boxes)).
                     snippet(getString(R.string.snippet_bee_boxes)));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(jackson_bottom));
+
         } catch (Exception e) {
             Context context = getApplicationContext();
             CharSequence text = e.getMessage();
@@ -65,6 +67,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
         }
+    }
 
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+        Toast.makeText(this, "Info window clicked",
+                Toast.LENGTH_SHORT).show();
     }
 }
