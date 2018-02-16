@@ -62,7 +62,11 @@
             android:id="@+id/button_launch_map_activity"
             android:text="@string/button_launch_map_text"/>
 
-
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_launch_tile_overlay_activity"
+                android:text="@string/button_launch_tile_overlay_text"/>
 
         </LinearLayout>
 

@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.support.v4.app.Fragment;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG ="abc";
@@ -34,6 +35,20 @@ public class MainActivity extends AppCompatActivity {
                 // Launch Map Fragment
                 Intent intent = new Intent(v.getContext(), MapsActivity.class);
                 startActivity(intent);
+            }
+        });
+        final Button button_launch_tile_overlay = (Button) findViewById(R.id.button_launch_tile_overlay_activity);
+        button_launch_tile_overlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Launch Tile Overlay
+                try {
+                    Intent intent = new Intent(view.getContext(), TileOverlayDemoActivity.class);
+                    startActivity(intent);
+                }
+                catch (Exception ex) {
+                    Log.v(TAG, "We have a problem Houston: " + ex.toString());
+                }
             }
         });
 

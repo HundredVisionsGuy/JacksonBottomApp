@@ -10,4 +10,5 @@
     <color name="PaleGreenHTML">#A3D963</color>
     <color name="BlackHTML">#000000</color>
     <color name="RustHTML">#D57E6C</color>
+    <color name="white">#ffffff</color>
 </resources>
