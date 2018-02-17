@@ -51,7 +51,24 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        try {
+            final Button button_launch_layers_demo = (Button) findViewById(R.id.button_launch_layers_demo_activity);
+            button_launch_layers_demo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Launch Layers Demo
+                    try {
+                        Intent intent = new Intent(v.getContext(), LayersDemoActivity.class);
+                        startActivity(intent);
+                    } catch (Exception ex) {
+                        Log.v(TAG, "We have a problem Houston: " + ex.toString());
+                    }
+                }
+            });
+        }
+        catch (Exception ex) {
+            Log.v(TAG, "launch_layers has a problem" + ex.toString());
+        }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, rules);
 
