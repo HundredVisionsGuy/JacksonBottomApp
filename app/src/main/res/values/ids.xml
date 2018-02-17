@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="button_launch_layers_demo_activity" type="id">Test Layers Demo</item>
+</resources>

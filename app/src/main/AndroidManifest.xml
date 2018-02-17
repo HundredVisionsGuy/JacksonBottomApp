@@ -41,6 +41,8 @@
         <activity
             android:name=".TileOverlayDemoActivity"
             android:label="@string/title_activity_maps"></activity>
+        <activity android:name=".LayersDemoActivity"
+            android:label="Layers Demo"></activity>
     </application>
 
 </manifest>
