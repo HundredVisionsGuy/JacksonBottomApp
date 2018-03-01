@@ -26,9 +26,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Get list of rules to display on the ListView
         ListView rulesView = (ListView) findViewById(R.id.rules_list_view);
         Resources res = getResources();
         String[] rules = res.getStringArray(R.array.Rules);
+
+        // Display list of rules on ListView (rulesView)
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, rules);
+
+        rulesView.setAdapter(adapter);
+
+        // Set our Buttons
         final Button button_launch_map = (Button) findViewById(R.id.button_launch_map_activity);
         button_launch_map.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -37,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         final Button button_launch_tile_overlay = (Button) findViewById(R.id.button_launch_tile_overlay_activity);
         button_launch_tile_overlay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,10 +79,6 @@ public class MainActivity extends AppCompatActivity {
         catch (Exception ex) {
             Log.v(TAG, "launch_layers has a problem" + ex.toString());
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, rules);
-
-        rulesView.setAdapter(adapter);
 
 
         final Context context = this;
