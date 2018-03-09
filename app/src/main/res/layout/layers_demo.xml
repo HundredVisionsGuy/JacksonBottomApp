@@ -24,49 +24,30 @@
         class="com.google.android.gms.maps.SupportMapFragment" />
     <!-- A set of test checkboxes. -->
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@id/map"
-        android:padding="6dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
         android:background="@color/white"
-        android:orientation="vertical">
-
-        <Spinner
-            android:id="@+id/layers_spinner"
+        android:orientation="vertical"
+        android:padding="6dp">
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <CheckBox
-            android:id="@+id/traffic"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onTrafficToggled"
-            android:text="@string/traffic" />
-
-        <CheckBox
-            android:id="@+id/my_location"
-            android:layout_width="wrap_content"
+            android:id="@+id/text_marker_title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:text="@string/text_marker_title"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="false"
-            android:onClick="onMyLocationToggled"
-            android:text="@string/my_location" />
+            android:id="@+id/text_marker_description"
+            android:text="@string/text_marker_description"
+            android:textSize="16sp"
+            android:padding="2sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
 
-        <CheckBox
-            android:id="@+id/buildings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onBuildingsToggled"
-            android:checked="true"
-            android:text="@string/buildings" />
-
-        <CheckBox
-            android:id="@+id/indoor"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onIndoorToggled"
-            android:checked="true"
-            android:text="@string/indoor" />
     </LinearLayout>
 </RelativeLayout>

@@ -17,11 +17,17 @@ package org.chsweb.innovationacademy.jacksonbottom;
  */
 
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -34,6 +40,7 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.google.android.gms.maps.GoogleMap.MAP_TYPE_HYBRID;
@@ -47,21 +54,14 @@ import static com.google.android.gms.maps.GoogleMap.MAP_TYPE_TERRAIN;
  */
 public class LayersDemoActivity extends AppCompatActivity
         implements OnItemSelectedListener, OnMapReadyCallback,
-        ActivityCompat.OnRequestPermissionsResultCallback {
+        ActivityCompat.OnRequestPermissionsResultCallback, GoogleMap.OnInfoWindowClickListener {
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     private GoogleMap mMap;
 
-    private CheckBox mTrafficCheckbox;
-
-    private CheckBox mMyLocationCheckbox;
-
-    private CheckBox mBuildingsCheckbox;
-
-    private CheckBox mIndoorCheckbox;
-
-    private Spinner mSpinner;
+    private String marker_title, marker_description;
+    private TextView text_marker_title, text_marker_description;
 
     /**
      * Flag indicating whether a requested permission has been denied after returning in
@@ -74,31 +74,48 @@ public class LayersDemoActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layers_demo);
 
-        mSpinner = (Spinner) findViewById(R.id.layers_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, R.array.layers_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mSpinner.setAdapter(adapter);
-        mSpinner.setOnItemSelectedListener(this);
-
-        mTrafficCheckbox = (CheckBox) findViewById(R.id.traffic);
-        mMyLocationCheckbox = (CheckBox) findViewById(R.id.my_location);
-        mBuildingsCheckbox = (CheckBox) findViewById(R.id.buildings);
-        mIndoorCheckbox = (CheckBox) findViewById(R.id.indoor);
-
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        text_marker_title = (TextView) findViewById(R.id.text_marker_title);
+        text_marker_description = (TextView) findViewById(R.id.text_marker_description);
     }
 
     @Override
-    public void onMapReady(GoogleMap map) {
-        mMap = map;
-        updateMapType();
-        updateTraffic();
-        updateMyLocation();
-        updateBuildings();
-        updateIndoor();
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        mMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        mMap.setMinZoomPreference(16.0f);
+        mMap.setMaxZoomPreference(20.0f);
+        mMap.setOnInfoWindowClickListener(this);
+/*
+    To reference marker click listeners, see
+    https://github.com/googlemaps/android-samples/blob/master/ApiDemos/java/app/src/main/java/com/example/mapdemo/MarkerDemoActivity.java
+
+ */
+        try {
+            LatLng jackson_bottom = new LatLng(45.5007, -122.9903);
+            LatLng upland_ponds = new LatLng(45.50023, -122.9895);
+            LatLng mason_bee_boxes = new LatLng(45.500105, -122.98923);
+            mMap.addMarker(new MarkerOptions().position(jackson_bottom).
+                    title(getString(R.string.marker_jackson_main)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(upland_ponds).
+                    title(getString(R.string.marker_upland_ponds)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(mason_bee_boxes).
+                    title(getString(R.string.marker_bee_boxes)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(jackson_bottom));
+
+        } catch (Exception e) {
+            Context context = getApplicationContext();
+            CharSequence text = e.getMessage();
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
     }
 
     private boolean checkReady() {
@@ -109,63 +126,6 @@ public class LayersDemoActivity extends AppCompatActivity
         return true;
     }
 
-    /**
-     * Called when the Traffic checkbox is clicked.
-     */
-    public void onTrafficToggled(View view) {
-        updateTraffic();
-    }
-
-    private void updateTraffic() {
-        if (!checkReady()) {
-            return;
-        }
-        mMap.setTrafficEnabled(mTrafficCheckbox.isChecked());
-    }
-
-    /**
-     * Called when the MyLocation checkbox is clicked.
-     */
-    public void onMyLocationToggled(View view) {
-        updateMyLocation();
-    }
-
-    private void updateMyLocation() {
-        if (!checkReady()) {
-            return;
-        }
-
-        if (!mMyLocationCheckbox.isChecked()) {
-            mMap.setMyLocationEnabled(false);
-            return;
-        }
-
-        // Enable the location layer. Request the location permission if needed.
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
-            mMap.setMyLocationEnabled(true);
-        } else {
-            // Uncheck the box until the layer has been enabled and request missing permission.
-            mMyLocationCheckbox.setChecked(false);
-            PermissionUtils.requestPermission(this, LOCATION_PERMISSION_REQUEST_CODE,
-                    Manifest.permission.ACCESS_FINE_LOCATION, false);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] results) {
-        if (requestCode != LOCATION_PERMISSION_REQUEST_CODE) {
-            return;
-        }
-
-        if (PermissionUtils.isPermissionGranted(permissions, results,
-                Manifest.permission.ACCESS_FINE_LOCATION)) {
-            mMap.setMyLocationEnabled(true);
-            mMyLocationCheckbox.setChecked(true);
-        } else {
-            mShowPermissionDeniedDialog = true;
-        }
-    }
 
     @Override
     protected void onResumeFragments() {
@@ -177,33 +137,6 @@ public class LayersDemoActivity extends AppCompatActivity
         }
     }
 
-    /**
-     * Called when the Buildings checkbox is clicked.
-     */
-    public void onBuildingsToggled(View view) {
-        updateBuildings();
-    }
-
-    private void updateBuildings() {
-        if (!checkReady()) {
-            return;
-        }
-        mMap.setBuildingsEnabled(mBuildingsCheckbox.isChecked());
-    }
-
-    /**
-     * Called when the Indoor checkbox is clicked.
-     */
-    public void onIndoorToggled(View view) {
-        updateIndoor();
-    }
-
-    private void updateIndoor() {
-        if (!checkReady()) {
-            return;
-        }
-        mMap.setIndoorEnabled(mIndoorCheckbox.isChecked());
-    }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -217,26 +150,27 @@ public class LayersDemoActivity extends AppCompatActivity
             return;
         }
 
-        String layerName = ((String) mSpinner.getSelectedItem());
-        if (layerName.equals(getString(R.string.normal))) {
-            mMap.setMapType(MAP_TYPE_NORMAL);
-        } else if (layerName.equals(getString(R.string.hybrid))) {
-            mMap.setMapType(MAP_TYPE_HYBRID);
-
-
-        } else if (layerName.equals(getString(R.string.satellite))) {
-            mMap.setMapType(MAP_TYPE_SATELLITE);
-        } else if (layerName.equals(getString(R.string.terrain))) {
-            mMap.setMapType(MAP_TYPE_TERRAIN);
-        } else if (layerName.equals(getString(R.string.none_map))) {
-            mMap.setMapType(MAP_TYPE_NONE);
-        } else {
-            Log.i("LDA", "Error setting layer with name " + layerName);
-        }
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         // Do nothing.
+    }
+
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+        if (marker.equals(getString(R.string.marker_jackson_main))) {
+            text_marker_title.setText(R.string.marker_jackson_main);
+            text_marker_description.setText(R.string.textview_welcome_main);
+        }
+        else if (marker.equals(getString(R.string.marker_bee_boxes))) {
+            text_marker_title.setText(R.string.marker_bee_boxes);
+            text_marker_description.setText(R.string.snippet_bee_boxes);
+        }
+        else {
+            text_marker_title.setText("Not There Yet");
+            text_marker_description.setText("sorry, have to go to the bathroom now.");
+        }
+
     }
 }
