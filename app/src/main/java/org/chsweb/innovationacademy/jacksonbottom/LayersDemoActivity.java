@@ -159,11 +159,11 @@ public class LayersDemoActivity extends AppCompatActivity
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        if (marker.equals(getString(R.string.marker_jackson_main))) {
+        if (marker.getTitle().equals(getString(R.string.marker_jackson_main))) {
             text_marker_title.setText(R.string.marker_jackson_main);
             text_marker_description.setText(R.string.textview_welcome_main);
         }
-        else if (marker.equals(getString(R.string.marker_bee_boxes))) {
+        else if (marker.getTitle().equals(getString(R.string.marker_bee_boxes))) {
             text_marker_title.setText(R.string.marker_bee_boxes);
             text_marker_description.setText(R.string.snippet_bee_boxes);
         }
