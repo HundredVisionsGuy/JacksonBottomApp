@@ -1,4 +1,5 @@
 <resources>
+    <!-- Main Activity Resources -->
     <string name="app_name">Jackson Bottom</string>
     <string name="gps_network_not_enabled">Your GPS is not Enabled. Would you like to turn it on now?</string>
     <string name="open_location_settings">Open Location Settings</string>
@@ -10,6 +11,9 @@
         <item>No dogs or bicycles, please.</item>
         <item>The Education Center is open 10 am to 4 pm, seven days a week</item>
     </string-array>
+    <string name="button_launch_virtual_tour_text">Take the Virtual Tour</string>
+
+    <!-- Map Markers Resources -->
     <string name="title_activity_maps">Map</string>
     <string name="marker_jackson_main">Marker in Jackson Bottom</string>
     <string name="marker_upland_ponds">Upland Ponds</string>
@@ -17,9 +21,9 @@
     <string name="marker_bee_boxes">Mason Bee Boxes</string>
     <string name="button_launch_map_text">Open Map</string>
     <string name="snippet_bee_boxes"><p>The large house like boxes you see are homes for Mason Bees.
-        These bees don’t make honey and they don’t sting but they do a great job of pollinating all
+        These bees don’t make honey and they don’t <br />sting but they do a great job of pollinating all
         the flowers you see around you. The bees emerge from their cocoons in the spring. They build
-        a nest in narrow holes.</p><p>Females visit flowers to gather pollen and nectar. The bee lays an
+        a nest in narrow holes.</p><p><br />Females visit flowers to gather pollen and nectar. The bee lays an
         egg. Then, she creates a wall of mud, which doubles as the back of the next cell. The
         process continues until she has filled the cavity.</p><p> By the summer, the larva has consumed
         all of its provisions and begins spinning a cocoon around itself.</p><p>How many of the tubes in
@@ -28,30 +32,16 @@
     <string name="fade_in">Fade In Tiles</string>
     <string name="transparency">Transparency</string>
     <string name="button_launch_tile_overlay_text">Test Tile Overlay</string>
-    <!-- Layers Demo Strings -->
-    <string name="indoor">Indoor</string>
-    <string name="traffic">Traffic</string>
-    <string name="my_location">My Location</string>
-    <string name="buildings">Buildings</string>
-    <string-array name="layers_array">
-        <item>@string/normal</item>
-        <item>@string/hybrid</item>
-        <item>@string/satellite</item>
-        <item>@string/terrain</item>
-        <item>@string/none_map</item>
-    </string-array>
-    <string name="normal">Normal</string>
-    <string name="hybrid">Hybrid</string>
-    <string name="satellite">Satellite</string>
-    <string name="terrain">Terrain</string>
-    <string name="none_map">None</string>
-    <string name="map_not_ready">Map is not ready yet</string>
+    <string name="text_marker_title">Explore Jackson Bottom</string>
+    <string name="text_marker_description">Click a marker to learn more.</string>
 
     <!--    Permissions    -->
     <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
     <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
     <string name="permission_required_toast">Location permission is required for this demo.</string>
-    <string name="button_launch_layers_demo_text">Test Layers Demo</string>
-    <string name="text_marker_title">Marker Title</string>
-    <string name="text_marker_description">Click a marker to learn more.</string>
+
+    <!-- Other -->
+    <string name="map_not_ready">Map is not ready yet</string>
+
+
 </resources>
