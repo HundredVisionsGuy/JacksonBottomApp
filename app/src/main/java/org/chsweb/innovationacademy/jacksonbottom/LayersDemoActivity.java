@@ -53,7 +53,7 @@ import static com.google.android.gms.maps.GoogleMap.MAP_TYPE_TERRAIN;
  * Demonstrates the different base layers of a map.
  */
 public class LayersDemoActivity extends AppCompatActivity
-        implements OnItemSelectedListener, OnMapReadyCallback,
+        implements GoogleMap.OnMarkerClickListener, OnItemSelectedListener, OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback, GoogleMap.OnInfoWindowClickListener {
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
@@ -108,6 +108,8 @@ public class LayersDemoActivity extends AppCompatActivity
                     title(getString(R.string.marker_bee_boxes)).
                     icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(jackson_bottom));
+
+
 
         } catch (Exception e) {
             Context context = getApplicationContext();
@@ -169,8 +171,27 @@ public class LayersDemoActivity extends AppCompatActivity
         }
         else {
             text_marker_title.setText("Not There Yet");
-            text_marker_description.setText("sorry, have to go to the bathroom now.");
+            text_marker_description.setText("Sorry, it's the students' job to finish this.");
         }
 
+    }
+    /*
+        We'll clean this up in a bit. For reference, go to
+        https://github.com/googlemaps/android-samples/blob/master/ApiDemos/java/app/src/main/java/com/example/mapdemo/MarkerDemoActivity.java*/
+    @Override
+    public boolean onMarkerClick(final Marker marker) {
+        if (marker.getTitle().equals(getString(R.string.marker_jackson_main))) {
+            text_marker_title.setText(R.string.marker_jackson_main);
+            text_marker_description.setText(R.string.textview_welcome_main);
+        }
+        else if (marker.getTitle().equals(getString(R.string.marker_bee_boxes))) {
+            text_marker_title.setText(R.string.marker_bee_boxes);
+            text_marker_description.setText(R.string.snippet_bee_boxes);
+        }
+        else {
+            text_marker_title.setText("Not There Yet");
+            text_marker_description.setText("Sorry, it's the students' job to finish this.");
+        }
+        return false;
     }
 }
