@@ -38,10 +38,7 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"></activity>
-        <activity
-            android:name=".TileOverlayDemoActivity"
-            android:label="@string/title_activity_maps"></activity>
-        <activity android:name=".LayersDemoActivity"
+        <activity android:name=".VirtualTourActivity"
             android:label="Layers Demo"></activity>
     </application>
 
