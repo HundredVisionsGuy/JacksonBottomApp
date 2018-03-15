@@ -15,6 +15,7 @@
 
     <!-- Virtual Tour Activity Resources -->
     <string name="title_virtual_tour">Jackson Bottom Virtual Tour</string>
+
     <!-- Map Markers Resources -->
     <string name="title_activity_maps">Map</string>
     <string name="marker_jackson_main">Jackson Bottom Wetlands</string>
