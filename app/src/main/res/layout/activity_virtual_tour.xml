@@ -39,15 +39,22 @@
             android:textStyle="bold"
             android:text="@string/text_marker_title"
             android:textAlignment="center"/>
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/text_marker_description"
-            android:text="@string/text_marker_description"
-            android:textSize="16sp"
-            android:padding="2sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_height="match_parent">
+
+            <WebView
+                android:id="@+id/wv_marker_description"
+                android:layout_width="match_parent"
+                android:layout_height="99dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:padding="2sp"
+                android:isScrollContainer="true"
+                android:text="@string/wv_marker_description"
+                android:textSize="16sp" />
+        </LinearLayout>
+
 
     </LinearLayout>
 </RelativeLayout>

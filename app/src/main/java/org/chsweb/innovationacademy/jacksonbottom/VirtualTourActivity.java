@@ -31,6 +31,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.TextView;
@@ -49,6 +50,7 @@ public class VirtualTourActivity extends AppCompatActivity
 
     private String marker_title, marker_description;
     private TextView text_marker_title, text_marker_description;
+    private WebView webView;
 
     /**
      * Flag indicating whether a requested permission has been denied after returning in
@@ -66,9 +68,14 @@ public class VirtualTourActivity extends AppCompatActivity
         mapFragment.getMapAsync(this);
 
         text_marker_title = (TextView) findViewById(R.id.text_marker_title);
-        text_marker_description = (TextView) findViewById(R.id.text_marker_description);
-    }
+        //text_marker_description = (TextView) findViewById(R.id.text_marker_description);
+        String wv_text = "<html><body>" + getResources().getString(R.string.wv_marker_description) + "</body></html>";
 
+
+        // initialize webView
+        webView = (WebView) findViewById(R.id.wv_marker_description);
+        webView.loadData(wv_text, "text/html", null);
+    }
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -150,7 +157,10 @@ public class VirtualTourActivity extends AppCompatActivity
     public void onInfoWindowClick(Marker marker) {
         if (marker.getTitle().equals(getString(R.string.marker_jackson_main))) {
             text_marker_title.setText(R.string.marker_jackson_main);
+            String wv_text = "<html><body>" + R.string.marker_jackson_main + "</body></html>";
+
             text_marker_description.setText(R.string.textview_welcome_main);
+            webView.loadData(wv_text, "text/html", null);
         }
         else if (marker.getTitle().equals(getString(R.string.marker_bee_boxes))) {
             text_marker_title.setText(R.string.marker_bee_boxes);
