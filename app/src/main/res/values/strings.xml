@@ -33,7 +33,15 @@
     <string name="transparency">Transparency</string>
     <string name="button_launch_tile_overlay_text">Test Tile Overlay</string>
     <string name="text_marker_title">Explore Jackson Bottom</string>
-    <string name="text_marker_description">Click a marker to learn more.</string>
+    <string name="wv_marker_description">The large house like boxes you see are homes for Mason Bees.
+        These bees don\'t make honey and they don\'t <br />sting but they do a great job of pollinating all
+        the flowers you see around you.<br />The bees emerge from their cocoons in the spring. They build
+        a nest in narrow holes.Females visit flowers to gather pollen and nectar. The bee lays an
+        egg. Then, she creates a wall of mud, which doubles as the back of the next cell. The
+        process continues until she has filled the cavity.<br /> By the summer, the larva has consumed
+        all of its provisions and begins spinning a cocoon around itself. How many of the tubes in
+        the houses look like they are full?  If you were a bee which flowers in this garden would
+        you like best?</string>
 
     <!--    Permissions    -->
     <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
