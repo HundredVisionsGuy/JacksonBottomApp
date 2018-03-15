@@ -30,6 +30,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.AdapterView;
@@ -68,12 +70,12 @@ public class VirtualTourActivity extends AppCompatActivity
         mapFragment.getMapAsync(this);
 
         text_marker_title = (TextView) findViewById(R.id.text_marker_title);
-        //text_marker_description = (TextView) findViewById(R.id.text_marker_description);
-        String wv_text = "<html><body>" + getResources().getString(R.string.wv_marker_description) + "</body></html>";
-
 
         // initialize webView
         webView = (WebView) findViewById(R.id.wv_marker_description);
+
+        // Display directions in webView
+        String wv_text = getResources().getString(R.string.wv_marker_description);
         webView.loadData(wv_text, "text/html", null);
     }
     @Override
@@ -155,22 +157,40 @@ public class VirtualTourActivity extends AppCompatActivity
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-        if (marker.getTitle().equals(getString(R.string.marker_jackson_main))) {
-            text_marker_title.setText(R.string.marker_jackson_main);
-            String wv_text = "<html><body>" + R.string.marker_jackson_main + "</body></html>";
+        try {
+            if (marker.getTitle().equals(getString(R.string.marker_jackson_main))) {
+                // Set the title
+                text_marker_title.setText(R.string.marker_jackson_main);
 
-            text_marker_description.setText(R.string.textview_welcome_main);
-            webView.loadData(wv_text, "text/html", null);
-        }
-        else if (marker.getTitle().equals(getString(R.string.marker_bee_boxes))) {
-            text_marker_title.setText(R.string.marker_bee_boxes);
-            text_marker_description.setText(R.string.snippet_bee_boxes);
-        }
-        else {
-            text_marker_title.setText("Not There Yet");
-            text_marker_description.setText("Sorry, it's the students' job to finish this.");
-        }
+                // Set the text as HTML
+                String wv_text = "<html><body>" + getString(R.string.marker_jackson_main) + "</body></html>";
+                //text_marker_description.setText(R.string.textview_welcome_main);
+                webView.loadData(wv_text, "text/html", null);
+            } else if (marker.getTitle().equals(getString(R.string.marker_bee_boxes))) {
+                // Set the title
+                text_marker_title.setText(R.string.marker_bee_boxes);
 
+                // Set the text as HTML
+                String wv_text = "<html><body>" + getString(R.string.snippet_bee_boxes) + "</body></html>";
+                //text_marker_description.setText(R.string.textview_welcome_main);
+                webView.loadData(wv_text, "text/html", null);
+            } else {
+                // Set the title
+                text_marker_title.setText(R.string.text_marker_title_error);
+
+                // Set the text as HTML
+                String wv_text = "<html><body>" + getString(R.string.text_marker_description_error) + "</body></html>";
+                //text_marker_description.setText(R.string.textview_welcome_main);
+                webView.loadData(wv_text, "text/html", null);
+            }
+        }
+        catch (Exception e) {
+            Context context = getApplicationContext();
+            CharSequence text = e.getMessage();
+            int duration = Toast.LENGTH_LONG;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
     }
     /*
         We'll clean this up in a bit. For reference, go to
