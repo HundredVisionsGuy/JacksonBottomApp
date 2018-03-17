@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         try {
-            final Button button_launch_layers_demo = (Button) findViewById(R.id.button_launch_layers_demo_activity);
-            button_launch_layers_demo.setOnClickListener(new View.OnClickListener() {
+            final Button button_launch_virtual_tour = (Button) findViewById(R.id.button_launch_virtual_tour);
+            button_launch_virtual_tour.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     // Launch Layers Demo

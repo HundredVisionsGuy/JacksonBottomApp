@@ -24,8 +24,11 @@ public class MainActivityTest {
     public ActivityTestRule<MainActivity> mainActivityActivityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
 
     private MainActivity mainActivity = null;
-    
+
+    // Set activity monitors
     Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MapsActivity.class.getName(), null, false);
+    Instrumentation.ActivityMonitor vtmonitor = getInstrumentation().addMonitor
+            (VirtualTourActivity.class.getName(), null, false);
 
     @Before
     public void setUp() throws Exception {
@@ -43,6 +46,18 @@ public class MainActivityTest {
         assertNotNull(mapsActivity);
 
         mapsActivity.finish();
+    }
+    @Test
+    public void testLaunchVirtualTourOnButtonClick() {
+        assertNotNull(mainActivity.findViewById(R.id.button_launch_virtual_tour));
+
+        onView(withId(R.id.button_launch_virtual_tour)).perform(click());
+        Activity virtualTourActivity = getInstrumentation().waitForMonitorWithTimeout(vtmonitor,
+                5000);
+
+        assertNotNull(virtualTourActivity);
+
+        virtualTourActivity.finish();
     }
 
     @After

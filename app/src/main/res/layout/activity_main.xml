@@ -65,7 +65,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button_launch_layers_demo_activity"
+                android:id="@+id/button_launch_virtual_tour"
                 android:text="@string/button_launch_virtual_tour_text"/>
 
         </LinearLayout>
