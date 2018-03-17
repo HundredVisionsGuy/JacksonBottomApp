@@ -3,6 +3,7 @@ package org.chsweb.innovationacademy.jacksonbottom;
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.support.test.rule.ActivityTestRule;
+import android.view.View;
 
 import org.junit.After;
 import org.junit.Before;
@@ -58,6 +59,12 @@ public class MainActivityTest {
         assertNotNull(virtualTourActivity);
 
         virtualTourActivity.finish();
+    }
+    @Test
+    public void testLaunch() {
+        View view = mainActivity.findViewById(R.id.rules_list_view);
+
+        assertNotNull(view);
     }
 
     @After

@@ -47,8 +47,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <ListView
                 android:layout_width="match_parent"
@@ -56,11 +55,11 @@
                 android:id="@+id/rules_list_view"
                 android:layout_weight="1"
                 />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_launch_map_activity"
-            android:text="@string/button_launch_map_text"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_launch_map_activity"
+                android:text="@string/button_launch_map_text"/>
 
             <Button
                 android:layout_width="wrap_content"
