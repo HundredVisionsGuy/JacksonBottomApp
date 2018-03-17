@@ -48,6 +48,7 @@ public class MainActivityTest {
 
         mapsActivity.finish();
     }
+
     @Test
     public void testLaunchVirtualTourOnButtonClick() {
         assertNotNull(mainActivity.findViewById(R.id.button_launch_virtual_tour));
@@ -60,12 +61,13 @@ public class MainActivityTest {
 
         virtualTourActivity.finish();
     }
+
     @Test
     public void testLaunch() {
         View view = mainActivity.findViewById(R.id.rules_list_view);
-
         assertNotNull(view);
     }
+
 
     @After
     public void tearDown() throws Exception {
