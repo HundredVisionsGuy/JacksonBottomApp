@@ -85,6 +85,7 @@ public class VirtualTourActivity extends AppCompatActivity
         mMap.setMinZoomPreference(16.0f);
         mMap.setMaxZoomPreference(20.0f);
         mMap.setOnInfoWindowClickListener(this);
+        mMap.setOnMarkerClickListener(this);
 /*
     To reference marker click listeners, see
     https://github.com/googlemaps/android-samples/blob/master/ApiDemos/java/app/src/main/java/com/example/mapdemo/MarkerDemoActivity.java
@@ -196,19 +197,46 @@ public class VirtualTourActivity extends AppCompatActivity
         We'll clean this up in a bit. For reference, go to
         https://github.com/googlemaps/android-samples/blob/master/ApiDemos/java/app/src/main/java/com/example/mapdemo/MarkerDemoActivity.java*/
     @Override
-    public boolean onMarkerClick(Marker marker) {
-        if (marker.getTitle().equals(getString(R.string.marker_jackson_main))) {
-            text_marker_title.setText(R.string.marker_jackson_main);
-            text_marker_description.setText(R.string.textview_welcome_main);
+    public boolean onMarkerClick(final Marker marker) {
+        Context context = getApplicationContext();
+        String msg = "we have a marker click from " + marker.getTitle().toString();
+        int duration = Toast.LENGTH_LONG;
+        Toast toast = Toast.makeText(context, msg, duration);
+        toast.show();
+        try {
+            if (marker.getTitle().equals(getString(R.string.marker_jackson_main))) {
+                // Set the title
+                text_marker_title.setText(R.string.marker_jackson_main);
+
+                // Set the text as HTML
+                String wv_text = "<html><body>" + getString(R.string.marker_jackson_main) + "</body></html>";
+                //text_marker_description.setText(R.string.textview_welcome_main);
+                webView.loadData(wv_text, "text/html", null);
+            } else if (marker.getTitle().equals(getString(R.string.marker_bee_boxes))) {
+                // Set the title
+                text_marker_title.setText(R.string.marker_bee_boxes);
+
+                // Set the text as HTML
+                String wv_text = "<html><body>" + getString(R.string.snippet_bee_boxes) + "</body></html>";
+                //text_marker_description.setText(R.string.textview_welcome_main);
+                webView.loadData(wv_text, "text/html", null);
+            } else {
+                // Set the title
+                text_marker_title.setText(R.string.text_marker_title_error);
+
+                // Set the text as HTML
+                String wv_text = "<html><body>" + getString(R.string.text_marker_description_error) + "</body></html>";
+                //text_marker_description.setText(R.string.textview_welcome_main);
+                webView.loadData(wv_text, "text/html", null);
+            }
         }
-        else if (marker.getTitle().equals(getString(R.string.marker_bee_boxes))) {
-            text_marker_title.setText(R.string.marker_bee_boxes);
-            text_marker_description.setText(R.string.snippet_bee_boxes);
+        catch (Exception e) {
+            context = getApplicationContext();
+            CharSequence text = e.getMessage();
+            duration = Toast.LENGTH_LONG;
+            toast = Toast.makeText(context, text, duration);
+            toast.show();
         }
-        else {
-            text_marker_title.setText("Not There Yet");
-            text_marker_description.setText("Sorry, it's the students' job to finish this.");
-        }
-        return false;
+        return true;
     }
 }

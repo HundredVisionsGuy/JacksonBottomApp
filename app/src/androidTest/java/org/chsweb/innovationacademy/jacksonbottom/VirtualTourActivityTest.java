@@ -1,14 +1,20 @@
 package org.chsweb.innovationacademy.jacksonbottom;
 
 import android.support.test.rule.ActivityTestRule;
-import android.widget.LinearLayout;
+import android.support.test.uiautomator.UiDevice;
+import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.UiObjectNotFoundException;
+import android.support.test.uiautomator.UiSelector;
 import android.widget.RelativeLayout;
+
+import com.google.android.gms.maps.GoogleMap;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
 /**
@@ -19,6 +25,7 @@ public class VirtualTourActivityTest {
     public ActivityTestRule<VirtualTourActivity> mActivityVirtualTourTestRule = new
             ActivityTestRule<VirtualTourActivity>(VirtualTourActivity.class);
     private VirtualTourActivity mActivity = null;
+    private GoogleMap mGMap = null;
 
     @Before
     public void setUp() throws Exception {
@@ -37,12 +44,15 @@ public class VirtualTourActivityTest {
 
         assertNotNull(rlContainer);
 
-        //VirtualTourActivity fragment = new FragmentToTest();
-        //mActivity.getSupportFragmentManager().findFragmentById(R.id.map);
     }
 
     @Test
     public void testOnMapReady() throws Exception {
+        UiDevice mDevice = UiDevice.getInstance(getInstrumentation());
+        UiObject mMarker = mDevice.findObject(new UiSelector().descriptionContains(String.valueOf(R.string
+                .marker_jackson_main)));
+        assertNotNull(mMarker);
+
     }
 
     @Test
