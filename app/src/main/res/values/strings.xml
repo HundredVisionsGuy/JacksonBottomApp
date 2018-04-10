@@ -47,6 +47,7 @@
     <string name="map_not_ready">Map is not ready yet</string>
     <string name="text_marker_title_error">Not There Yet</string>
     <string name="text_marker_description_error">Sorry, it\'s the students\' job to finish this.</string>
+    <string name="marker_overlook_fence">Overlook Fence</string>
 
 
 </resources>

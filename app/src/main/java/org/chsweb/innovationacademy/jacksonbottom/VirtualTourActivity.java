@@ -95,6 +95,7 @@ public class VirtualTourActivity extends AppCompatActivity
             LatLng jackson_bottom = new LatLng(45.5007, -122.9903);
             LatLng upland_ponds = new LatLng(45.50023, -122.9895);
             LatLng mason_bee_boxes = new LatLng(45.500105, -122.98923);
+            LatLng overlook_fence = new LatLng(45.49982,-122.9866);
             mMap.addMarker(new MarkerOptions().position(jackson_bottom).
                     title(getString(R.string.marker_jackson_main)).
                     icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
@@ -103,6 +104,9 @@ public class VirtualTourActivity extends AppCompatActivity
                     icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             mMap.addMarker(new MarkerOptions().position(mason_bee_boxes).
                     title(getString(R.string.marker_bee_boxes)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(overlook_fence).
+                    title(getString(R.string.marker_overlook_fence)).
                     icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(jackson_bottom));
 
