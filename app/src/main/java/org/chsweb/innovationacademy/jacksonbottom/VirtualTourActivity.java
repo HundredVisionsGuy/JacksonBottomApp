@@ -17,6 +17,17 @@ package org.chsweb.innovationacademy.jacksonbottom;
  */
 
 
+import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -25,19 +36,6 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-
-import android.content.Context;
-import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
-import android.text.Spanned;
-import android.view.View;
-import android.webkit.WebView;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * Demonstrates the different base layers of a map.
@@ -95,6 +93,8 @@ public class VirtualTourActivity extends AppCompatActivity
             LatLng jackson_bottom = new LatLng(45.5007, -122.9903);
             LatLng upland_ponds = new LatLng(45.50023, -122.9895);
             LatLng mason_bee_boxes = new LatLng(45.500105, -122.98923);
+            // TODO: add remaining LatLngs
+
             mMap.addMarker(new MarkerOptions().position(jackson_bottom).
                     title(getString(R.string.marker_jackson_main)).
                     icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
@@ -104,6 +104,9 @@ public class VirtualTourActivity extends AppCompatActivity
             mMap.addMarker(new MarkerOptions().position(mason_bee_boxes).
                     title(getString(R.string.marker_bee_boxes)).
                     icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+
+            // TODO: add remaining markers
+
             mMap.moveCamera(CameraUpdateFactory.newLatLng(jackson_bottom));
 
 

@@ -3,7 +3,6 @@ package org.chsweb.innovationacademy.jacksonbottom;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
-import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiSelector;
 import android.widget.RelativeLayout;
 
@@ -15,7 +14,7 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import static android.support.test.InstrumentationRegistry.getInstrumentation;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by winikkc on 3/16/18.
@@ -50,7 +49,9 @@ public class VirtualTourActivityTest {
     public void testOnMapReady() throws Exception {
         UiDevice mDevice = UiDevice.getInstance(getInstrumentation());
         UiObject mMarker = mDevice.findObject(new UiSelector().descriptionContains(String.valueOf(R.string
-                .marker_jackson_main)));
+                .marker_upland_ponds)));
+        mMarker.click();
+        //UiObject result = mDevice.findObjects()
         assertNotNull(mMarker);
 
     }
