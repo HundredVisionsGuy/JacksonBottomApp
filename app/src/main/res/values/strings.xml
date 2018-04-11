@@ -19,7 +19,6 @@
     <string name="marker_upland_ponds">Upland Ponds</string>
     <string name="snippet_upland_ponds">These ponds were made by people but the animals quickly moved in.  You can see small tadpoles and fish along the warm edges.  Look carefully and you may be able to see a bullfrog lurking in the shallows as well.  Bullfrogs are not native to this area but love to eat the tadpoles and other creatures in these ponds.  If the bullfrogs jump you may hear them make a funny “squeak” sound.</string>
     <string name="marker_bee_boxes">Mason Bee Boxes</string>
-    <string name="button_launch_map_text">Open Map</string>
     <string name="snippet_bee_boxes"><![CDATA[<p>The large house like boxes you see are homes for Mason Bees.
         These bees don\'t make honey and they don\'t sting but they do a great job of pollinating all
         the flowers you see around you.</p><p>The bees emerge from their cocoons in the spring. They build
@@ -48,6 +47,7 @@
     <string name="text_marker_title_error">Not There Yet</string>
     <string name="text_marker_description_error">Sorry, it\'s the students\' job to finish this.</string>
     <string name="marker_overlook_fence">Overlook Fence</string>
+    <string name="button_launch_web_photos">Photo gallery</string>
 
 
 </resources>

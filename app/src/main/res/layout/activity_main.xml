@@ -58,8 +58,8 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button_launch_map_activity"
-                android:text="@string/button_launch_map_text"/>
+                android:id="@+id/button_launch_web_photos_intent"
+                android:text="@string/button_launch_web_photos"/>
 
             <Button
                 android:layout_width="wrap_content"
