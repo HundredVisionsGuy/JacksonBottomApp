@@ -49,6 +49,7 @@
     <string name="text_marker_description_error">Sorry, it\'s the students\' job to finish this.</string>
     <string name="marker_overlook_fence">Overlook Fence</string>
     <string name="button_launch_web_photos">Photo gallery</string>
+    <string name="intersection">Intersection</string>
 
 
 </resources>

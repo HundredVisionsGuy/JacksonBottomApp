@@ -95,6 +95,21 @@ public class VirtualTourActivity extends AppCompatActivity
             LatLng mason_bee_boxes = new LatLng(45.500105, -122.98923);
             LatLng overlook_fence = new LatLng(45.49982,-122.9866);
             // TODO: add remaining LatLngs
+            LatLng intersection = new LatLng(45.50082,-122.9894);
+            LatLng service_road = new LatLng(45.50153,-122.988);
+            LatLng drain_under_road = new LatLng(45.50227,-122.9871);
+            LatLng north_facing_intersection = new LatLng(45.5026,-122.9866);
+            LatLng heading_south = new LatLng(45.5024,-122.9865);
+            LatLng duck_blind = new LatLng(45.50228,-122.9862);
+            LatLng track_trap = new LatLng(45.50188,-122.9861);
+            LatLng pintail_pond = new LatLng(45.50127,-122.9851);
+            LatLng south_on_trail = new LatLng(45.50077,-122.9853);
+            LatLng trail_junction = new LatLng(45.50038,-122.9854);
+            LatLng bridge = new LatLng(45.50088,-122.9858);
+            LatLng willow_tunnel = new LatLng(45.50073,-122.986);
+            LatLng kingfisher_marsh_tunnel = new LatLng(45.50045,-122.9861);
+            LatLng thimbleberry_alley = new LatLng(45.49985,-122.987);
+
 
             mMap.addMarker(new MarkerOptions().position(jackson_bottom).
                     title(getString(R.string.marker_jackson_main)).
@@ -110,6 +125,9 @@ public class VirtualTourActivity extends AppCompatActivity
                     icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
             // TODO: add remaining markers
+            mMap.addMarker(new MarkerOptions().position(intersection).
+                    title(getString(R.string.intersection)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
             mMap.moveCamera(CameraUpdateFactory.newLatLng(jackson_bottom));
 
