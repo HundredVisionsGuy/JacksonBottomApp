@@ -49,7 +49,20 @@
     <string name="text_marker_description_error">Sorry, it\'s the students\' job to finish this.</string>
     <string name="marker_overlook_fence">Overlook Fence</string>
     <string name="button_launch_web_photos">Photo gallery</string>
-    <string name="intersection">Intersection</string>
+    <string name="marker_intersection">Intersection</string>
+    <string name="marker_drain_under_road">Drain under Road</string>
+    <string name="marker_north_facing_intersection">North Facing Intersection</string>
+    <string name="marker_heading_south">Heading South</string>
+    <string name="marker_duck_blind">Duck Blind</string>
+    <string name="marker_track_trap">Track Trap</string>
+    <string name="marker_pintail_pond">Pintail Pond</string>
+    <string name="marker_south_on_trail">South on Trail</string>
+    <string name="marker_trail_junction">Trail Junction</string>
+    <string name="marker_bridge">Bridge</string>
+    <string name="marker_willow_tunnel">Willow Tunnel</string>
+    <string name="marker_kingfisher_marsh_tunnel">Kingfisher Marsh Tunnel</string>
+    <string name="marker_thimbleberry_alley">Thimbleberry Alley</string>
+    <string name="marker_service_road">Service Road</string>
 
 
 </resources>

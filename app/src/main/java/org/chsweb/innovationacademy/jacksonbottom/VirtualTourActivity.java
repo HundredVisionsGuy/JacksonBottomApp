@@ -126,7 +126,46 @@ public class VirtualTourActivity extends AppCompatActivity
 
             // TODO: add remaining markers
             mMap.addMarker(new MarkerOptions().position(intersection).
-                    title(getString(R.string.intersection)).
+                    title(getString(R.string.marker_intersection)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(service_road).
+                    title(getString(R.string.marker_service_road)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(drain_under_road).
+                    title(getString(R.string.marker_drain_under_road)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(north_facing_intersection).
+                    title(getString(R.string.marker_north_facing_intersection)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(heading_south).
+                    title(getString(R.string.marker_heading_south)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(duck_blind).
+                    title(getString(R.string.marker_duck_blind)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(track_trap).
+                    title(getString(R.string.marker_track_trap)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(pintail_pond).
+                    title(getString(R.string.marker_pintail_pond)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(south_on_trail).
+                    title(getString(R.string.marker_south_on_trail)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(trail_junction).
+                    title(getString(R.string.marker_trail_junction)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(bridge).
+                    title(getString(R.string.marker_bridge)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(willow_tunnel).
+                    title(getString(R.string.marker_willow_tunnel)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(kingfisher_marsh_tunnel).
+                    title(getString(R.string.marker_kingfisher_marsh_tunnel)).
+                    icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+            mMap.addMarker(new MarkerOptions().position(thimbleberry_alley).
+                    title(getString(R.string.marker_thimbleberry_alley)).
                     icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
             mMap.moveCamera(CameraUpdateFactory.newLatLng(jackson_bottom));
