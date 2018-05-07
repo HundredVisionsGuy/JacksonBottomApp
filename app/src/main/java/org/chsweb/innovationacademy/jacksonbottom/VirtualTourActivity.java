@@ -64,7 +64,8 @@ public class VirtualTourActivity extends AppCompatActivity
         setContentView(R.layout.activity_virtual_tour);
 
         SupportMapFragment mapFragment =
-                (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+                (SupportMapFragment) getSupportFragmentManager()
+                        .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
         text_marker_title = (TextView) findViewById(R.id.text_marker_title);
@@ -236,10 +237,19 @@ public class VirtualTourActivity extends AppCompatActivity
                 text_marker_title.setText(R.string.marker_bee_boxes);
 
                 // Set the text as HTML
-                String wv_text = "<html><body>" + getString(R.string.snippet_bee_boxes) + "</body></html>";
+                String wv_text = "<html><body>" + getString(R.string.snippet_upland_ponds) + "</body></html>";
                 //text_marker_description.setText(R.string.textview_welcome_main);
                 webView.loadData(wv_text, "text/html", null);
-            } else {
+            }  else if (marker.getTitle().equals(getString(R.string.marker_upland_ponds))) {
+                // Set the title
+                text_marker_title.setText(R.string.marker_upland_ponds);
+
+                // Set the text as HTML
+                String wv_text = "<html><body>" + getString(R.string.snippet_upland_ponds) + "</body></html>";
+                //text_marker_description.setText(R.string.textview_welcome_main);
+                webView.loadData(wv_text, "text/html", null);
+            }
+            else {
                 // Set the title
                 text_marker_title.setText(R.string.text_marker_title_error);
 
@@ -284,7 +294,16 @@ public class VirtualTourActivity extends AppCompatActivity
                 String wv_text = "<html><body>" + getString(R.string.snippet_bee_boxes) + "</body></html>";
                 //text_marker_description.setText(R.string.textview_welcome_main);
                 webView.loadData(wv_text, "text/html", null);
-            } else {
+            } else if (marker.getTitle().equals(getString(R.string.marker_upland_ponds))) {
+                // Set the title
+                text_marker_title.setText(R.string.marker_upland_ponds);
+
+                // Set the text as HTML
+                String wv_text = "<html><body>" + getString(R.string.snippet_upland_ponds) + "</body></html>";
+                //text_marker_description.setText(R.string.textview_welcome_main);
+                webView.loadData(wv_text, "text/html", null);
+            }
+            else {
                 // Set the title
                 text_marker_title.setText(R.string.text_marker_title_error);
 
