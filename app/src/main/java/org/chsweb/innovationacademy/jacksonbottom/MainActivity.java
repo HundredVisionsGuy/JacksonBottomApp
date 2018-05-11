@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -36,12 +37,11 @@ public class MainActivity extends AppCompatActivity {
         rulesView.setAdapter(adapter);
 
         // Set our Buttons
-        final Button button_launch_map = (Button) findViewById(R.id.button_launch_map_activity);
+        final Button button_launch_map = (Button) findViewById(R.id.button_launch_web_photos_intent);
         button_launch_map.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Launch Map Fragment
-                Intent intent = new Intent(v.getContext(), MapsActivity.class);
-                startActivity(intent);
+                String url = "http://www.jacksonbottom.org/about-us/photo-gallery/";
+                openWebPage(url);
             }
         });
         try {
@@ -106,6 +106,13 @@ public class MainActivity extends AppCompatActivity {
             dialog.show();
         }
 
+    }
+    public void openWebPage(String url) {
+        Uri webpage = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
 }
